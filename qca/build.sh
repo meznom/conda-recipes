@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # To build directly from the source directory:
-cp -r $RECIPE_DIR/../../../qca __qca__
-cd __qca__
+# cp -r $RECIPE_DIR/../../../qca __qca__
+# cd __qca__
 
 # Ensure we are not using MacPorts, but the native OS X compilers
 export PATH=$PREFIX/bin:/bin:/sbin:/usr/bin:/usr/sbin
@@ -21,13 +21,16 @@ for i in $PREFIX/lib/libpython${PY_VER}{.so,.dylib}; do
     fi
 done
 
+# Which compiler we use depends on the platform
 if [ "$OSX_ARCH" == "" ]; then
     # Linux
     export CXX="g++";
 else
+    # OS X
     export CXX="clang++";
 fi
 
+# Compile the C++ Python extension module
 mkdir __Release__
 cd __Release__
 cmake \
@@ -42,18 +45,11 @@ make
 
 # Run C++ unit test suite
 make buildtest
-if [ "$OSX_ARCH" != "" ]; then
-    for i in tests/*Test; do
-        install_name_tool -add_rpath ${PREFIX}/lib $i
-        install_name_tool -change libboost_unit_test_framework-mt.dylib  @rpath/libboost_unit_test_framework-mt.dylib $i
-        install_name_tool -change libboost_python-mt.dylib @rpath/libboost_python-mt.dylib $i
-    done
-fi
-# TODO: basisTest fails when built with clang...
 make check
 
 cd ..
 
+# Install the Python module
 $PYTHON setup.py install
 
 exit 0

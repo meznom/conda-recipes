@@ -1,10 +1,10 @@
 package:
   name: coma
-  version: 2.0.0
+  version: 2.0.2
 
 source:
-  fn: meznom-coma-1cb288a988e3.tar.bz2
-  url: https://bitbucket.org/meznom/coma/get/2.0.0.tar.bz2
+  fn: meznom-coma-30c4af9dc904.tar.bz2
+  url: https://bitbucket.org/meznom/coma/get/2.0.2.tar.bz2
 
 requirements:
   build:

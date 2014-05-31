@@ -13,4 +13,4 @@ build:
 about:
   home: http://www.boost.org/
   license: Boost-1.0
-  summary: Headers of the Boost library.
+  summary: Headers of the Boost library

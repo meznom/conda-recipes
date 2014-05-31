@@ -1,11 +1,11 @@
 package:
   name: qca
-  version: 8.2.0
+  version: 8.2.1
 
 source:
   #git_url: ssh://git@bitbucket.org/meznom/qca.git
-  fn: meznom-qca-e7e18394a3ae.tar.bz2
-  url: https://bitbucket.org/meznom/qca/get/8.2.0.tar.bz2
+  fn: meznom-qca-e02254a42ccb.tar.bz2
+  url: https://bitbucket.org/meznom/qca/get/8.2.1.tar.bz2
 
 requirements:
   build:

@@ -2,10 +2,10 @@
 
 ## Overview
 
-The repository contains [conda]() recipes for some of my Python projects and
-their dependencies, specifically for [coma]() and [qca](). The recipes only
+The repository contains [conda][] recipes for some of my Python projects and
+their dependencies, specifically for [coma][] and [qca][]. The recipes only
 target OS X and Linux for now, Windows is not supported. Binary packages for
-OS X and Linux are available on [Binstar](). The packages are built on OS X 10.9
+OS X and Linux are available on [Binstar][]. The packages are built on OS X 10.9
 and Ubuntu 14.04.
 
 ## Building the conda packages
@@ -25,7 +25,7 @@ $ conda install \
 ```
 
 Alternatively, and this should be easier, the packages can be installed from
-[Binstar]() without previously building them.
+[Binstar][] without previously building them.
 ```
 $ conda install \
         -c https://conda.binstar.org/meznom \
